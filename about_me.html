@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2; /* Light grey background */
-            color: #333; /* Dark grey text */
+            background-color: #f2f2f2;
+            color: #333;
         }
 
         .container {
@@ -22,29 +22,28 @@
             border: 2px solid #ddd;
             border-radius: 10px;
             margin-bottom: 20px;
-            background-color: white; /* White background for containers */
+            background-color: white;
         }
 
         header {
             background-color: grey;
-            text-align: left; /* Left align header text */
             padding: 20px;
             border: 2px solid #ddd;
             border-radius: 10px;
             margin-bottom: 20px;
             display: flex;
-            justify-content: space-between; /* Space between name and navigation */
+            flex-direction: column;
             align-items: center;
         }
 
         header h1 {
             margin: 0;
-            color: white; /* White text color */
+            color: white;
         }
 
         .intro {
-            color: black; /* Black text color */
-            text-align: left; /* Left align text */
+            color: black;
+            text-align: center;
             padding: 20px;
             border-radius: 10px;
             max-width: 600px;
@@ -56,12 +55,12 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: row; /* Display navigation items horizontally */
-            align-items: center; /* Center align items vertically */
+            flex-direction: column;
+            align-items: center;
         }
 
         nav ul li {
-            margin-right: 10px;
+            margin: 5px 0;
         }
 
         nav ul li a {
@@ -77,7 +76,7 @@
         }
 
         .contact {
-            text-align: center; /* Center align contact text */
+            text-align: center;
             margin-top: 10px;
         }
 
@@ -95,39 +94,23 @@
         }
 
         section h2 {
-            text-align: center; /* Center align headings */
+            text-align: center;
             margin-bottom: 20px;
         }
 
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             margin-top: 20px;
         }
 
-        .gallery img {
-            width: 300px;
-            height: 300px;
+        .gallery img, .gallery video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             margin: 10px;
             border-radius: 6px;
-        }
-
-        #posters .gallery img {
-            height: 400px;
-            width: 320; /* Increase the height &width for poster images */
-        }
-
-        #invitation .gallery img {
-            height: 400px; /* Increase the height for invitation images */
-        }
-
-        #others .gallery img {
-            height: 350px;
-        }
-
-        #menu .gallery img {
-            height: 400px; 
         }
 
         footer {
@@ -135,6 +118,50 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+
+        /* Media Queries */
+        @media (min-width: 600px) {
+            nav ul {
+                flex-direction: row;
+            }
+
+            nav ul li {
+                margin-right: 10px;
+            }
+        }
+
+        @media (min-width: 800px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .intro {
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gallery img, .gallery video {
+                max-width: 350px;
+            }
+
+            #posters .gallery img {
+                max-width: 320px;
+            }
+
+            #invitation .gallery img {
+                max-width: 400px;
+            }
+
+            #others .gallery img {
+                max-width: 350px;
+            }
+
+            #menu .gallery img {
+                max-width: 400px;
+            }
         }
     </style>
 </head>
@@ -185,7 +212,6 @@
             <video width="350" controls>
                 <source src="poster16.mp4" type="video/mp4">
             </video>
-           
         </div>
     </section>
 
@@ -225,7 +251,6 @@
             <video width="350" controls>
                 <source src="logo31.mp4" type="video/mp4">
             </video>
-           
             <img src="logo32.png" alt="Logo 32">
             <img src="logo33.png" alt="Logo 33">
             <img src="logo34.jpeg" alt="Logo 34">
@@ -236,17 +261,14 @@
             <video width="350" controls>
                 <source src="logo40.mp4" type="video/mp4">
             </video>
-
-
-           
         </div>
     </section>
 
-    <h2 style="text-align: center;"><u>INVITATION DESIGNS </u></h2>
+    <h2 style="text-align: center;"><u>INVITATION DESIGNS</u></h2>
     <section id="invitation" class="container">
         <div class="gallery">
             <img src="invitation1.jpeg" alt="Invitation 1">
-            <img  style="width: 500px;"src="invitation2.jpg" alt="Invitation 2">
+            <img style="width: 500px;"src="invitation2.jpg" alt="Invitation 2">
             <img src="invitation3.png" alt="Invitation 3">
             <img src="invitation4.png" alt="Invitation 4">
             <img src="invitation5.png" alt="Invitation 5">
@@ -256,11 +278,10 @@
             <img src="invitation9.png" alt="Invitation 9">
             <img src="invitation10.png" alt="Invitation 8">
             <img src="invitation11.png" alt="Invitation 9">
-
         </div>
     </section>
 
-    <h2 style="text-align: center;"><u>OTHER DESIGNS </u></h2> <!-- Added Others section -->
+    <h2 style="text-align: center;"><u>OTHER DESIGNS</u></h2>
     <section id="others" class="container">
         <div class="gallery">
             <img src="others1.png" alt="Other Design 1">
@@ -276,11 +297,9 @@
         </div>
     </section>
 
-
-    <h2 style="text-align: center;"><u>MENU DESIGNS</u></h2> 
+    <h2 style="text-align: center;"><u>MENU DESIGNS</u></h2>
     <section id="menu" class="container">
         <div class="gallery">
-            <!-- Menu designs images -->
             <img src="menu1.jpg" alt="Menu Design 1">
             <img src="menu2.jpg" alt="Menu Design 2">
             <img src="menu3.jpg" alt="Menu Design 3">
@@ -291,15 +310,15 @@
             <img src="menu8.png" alt="Menu Design 8">
             <img src="menu9.jpg" alt="Menu Design 9">
             <img src="menu10.jpg" alt="Menu Design 10">
-            <img src="men11.jpg" alt="Menu Design 11">
+            <img src="menu11.jpg" alt="Menu Design 11">
             <img src="menu12.png" alt="Menu Design 12">
             <img src="menu13.png" alt="Menu Design 13">
-        
         </div>
     </section>
+    
     <footer>
         <div>
-            <p>© 2024 Ayesha Ashfaq's Portfolio. All rights reserved.</p>
+            <p>© 2023 All rights reserved.</p>
         </div>
     </footer>
 </body>
